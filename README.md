@@ -13,7 +13,9 @@ The parser, model classes and Json library have been designed to be extensible.
 They however are very specific to the problem in hand.
 Example: The Json printer cannot be used to convert arbitary object to Json.
 
-The object model used is similar to what JavaCC would generate for the input grammar -
+The object model used is inspired from what JavaCC would generate for the input grammar -
 I have used JavaCC in the past and am speaking from experience.
+
+Hope Team Percolate likes the architecture and design.
 
 
