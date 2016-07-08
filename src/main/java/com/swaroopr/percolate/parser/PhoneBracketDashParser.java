@@ -6,6 +6,6 @@ package com.swaroopr.percolate.parser;
 public class PhoneBracketDashParser extends AbstractPhoneParser {
 
     public PhoneBracketDashParser() {
-        super("^(\\()?\\d{3}(\\))?\\s+?-?\\s+?\\d{3}\\s+?-?\\s+?\\d{4}$");
+        super("^(\\()\\s*?\\d{3}\\s*(\\))\\s*?-?\\s*\\d{3}\\s*-\\s*\\d{4}\\s*$");
     }
 }
