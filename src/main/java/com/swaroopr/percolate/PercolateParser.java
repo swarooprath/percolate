@@ -49,7 +49,6 @@ public class PercolateParser {
         Scanner sc = new Scanner(is);
         List<Integer> invalidLineNumbers = new ArrayList<>();
         List<Entity> entries = new ArrayList<>();
-
         int index = -1;
         while (sc.hasNext()) {
             index++;
@@ -60,10 +59,9 @@ public class PercolateParser {
                 continue;
             }
             entries.add(entry);
-            Collections.sort(entries, (e1, e2) -> e1.getName().compareTo(e2.getName()));
         }
+        Collections.sort(entries, (e1, e2) -> e1.getName().compareTo(e2.getName()));
         new JsonPrinter().printObject(ps, "", new FinalResult(entries, invalidLineNumbers));
-
     }
 
   static class FinalResult implements JsonMap {

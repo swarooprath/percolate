@@ -35,7 +35,7 @@ public class JsonPrinter  {
                 printStream.println();
             }
         }
-        printStream.println(prefix + "}");
+        printStream.print(prefix + "}");
     }
 
     public void printObject(PrintStream printStream, String prefix, JsonMap jsonMap) {
@@ -53,11 +53,12 @@ public class JsonPrinter  {
                 JsonMap jMap = (JsonMap) o;
                 printObject(printStream, newPrefix, jMap);
             } else {
-                String str = newPrefix + o.toString();
-                if (index != list.size()-1) {
-                    str = str + ",";
-                }
-                printStream.println(str);
+                printStream.print(newPrefix + o.toString());
+            }
+            if (index != list.size()-1) {
+                printStream.println(",");
+            } else {
+                printStream.println();
             }
         }
         printStream.print(prefix + "]");

@@ -7,6 +7,7 @@ import java.io.*;
 import java.nio.charset.StandardCharsets;
 
 /**
+ * Test the {@link PercolateParser}.
  * Created by sr on 7/8/16.
  */
 public class PercolateParserTest {
@@ -41,7 +42,7 @@ public class PercolateParserTest {
                 "      \"lastname\": \"Murphy\",\n" +
                 "      \"phonenumber\": \"018-154-474\",\n" +
                 "      \"zipcode\": \"83880\"\n" +
-                "    }\n" +
+                "    },\n" +
                 "    {\n" +
                 "      \"color\": \"Washington\",\n" +
                 "      \"firstname\": \"Booker\",\n" +
@@ -64,7 +65,6 @@ public class PercolateParserTest {
                 stringArray2InputStream(TEST_CASE_SR),
                 new PrintStream(baos)
         );
-        System.out.println( byteArrayOutputStream2String(baos).trim());
         Assert.assertEquals("{\n" +
                 "  \"entries\": [\n" +
                 "    {\n" +
@@ -73,14 +73,14 @@ public class PercolateParserTest {
                 "      \"lastname\": \"Chandler\",\n" +
                 "      \"phonenumber\": \"623-668-293\",\n" +
                 "      \"zipcode\": \"12312\"\n" +
-                "    }\n" +
+                "    },\n" +
                 "    {\n" +
                 "      \"color\": \"yellow\",\n" +
                 "      \"firstname\": \"James\",\n" +
                 "      \"lastname\": \"Murphy\",\n" +
                 "      \"phonenumber\": \"018-154-474\",\n" +
                 "      \"zipcode\": \"83880\"\n" +
-                "    }\n" +
+                "    },\n" +
                 "    {\n" +
                 "      \"color\": \"Washington\",\n" +
                 "      \"firstname\": \"Booker\",\n" +
@@ -93,7 +93,7 @@ public class PercolateParserTest {
                 "    1,\n" +
                 "    4\n" +
                 "  ]\n" +
-                "}", byteArrayOutputStream2String(baos).trim());
+                "}", byteArrayOutputStream2String(baos));
     }
 
     @Test
@@ -106,7 +106,7 @@ public class PercolateParserTest {
         Assert.assertEquals(
                 "{\n" +
                 "  \"entries\": [\n" +
-                "  ]\n" +
+                "  ],\n" +
                 "  \"errors\": [\n" +
                 "  ]\n" +
                 "}", byteArrayOutputStream2String(baos));
